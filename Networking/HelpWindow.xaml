@@ -1,0 +1,33 @@
+﻿<Controls:MetroWindow x:Class="Networking.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Networking"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d"
+        ShowMinButton="False"
+        ShowMaxRestoreButton="False"
+        BorderBrush="Black"
+        BorderThickness="1"
+        Title="HelpWindow" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Margin="5" Grid.Row="0" TextWrapping="Wrap">
+            This program simulates drones that could be used for wildfire monitoring. It currently supports the following:<LineBreak></LineBreak>
+            <LineBreak></LineBreak>
+            1. Add drones/towers.<LineBreak></LineBreak>
+            2. Move drones/towers.<LineBreak></LineBreak>
+            3. Link drones/towers based on proximity.  Currently only simulates LTE connections.<LineBreak></LineBreak>
+            4. Towers hard link to the command center automatically. (reliable internet connection)<LineBreak></LineBreak>
+            5. Simulate Message (right click on drone).<LineBreak></LineBreak>
+            6. Routes message back to command center through drones.
+        </TextBlock>
+
+        <Button Content="Close" Grid.Row="1" Click="CloseButtonHandler"/>
+    </Grid>
+</Controls:MetroWindow>

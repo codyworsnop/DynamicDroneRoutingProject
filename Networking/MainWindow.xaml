@@ -1,0 +1,41 @@
+﻿<Controls:MetroWindow x:Class="Networking.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:Networking"
+        BorderBrush="Black"
+        BorderThickness="1"
+        Title="Networking Project" Height="700" Width="1000"
+        ShowIconOnTitleBar="True"
+        Icon="/Images/DroneIcon.ico"
+        PreviewMouseLeftButtonDown="Window_PreviewMouseLeftButtonDown"
+        PreviewMouseLeftButtonUp="Window_PreviewMouseLeftButtonUp"
+        PreviewMouseMove="Window_PreviewMouseMove">
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Content="Info" Click="InfoBtnHandler"/>
+            <Button Content="Help" Click="HelpBtnHandler"/>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+
+    <Canvas Name="RootCanvas">
+
+        <Path Stroke="Black" StrokeThickness="1">
+            <Path.Data>
+                <GeometryGroup x:Name="connectors"/>
+            </Path.Data>
+        </Path>
+        <Canvas Canvas.Bottom="0">
+             <Border BorderThickness="0, 1, 0, 0" BorderBrush="Black" Canvas.Bottom="0">
+                <StackPanel Orientation="Horizontal" Background="Gray" Width="{Binding ActualWidth}" Height="35">
+                    <Button Name="BtnnNewDrone" Margin="5" Content="Add Drone" Height="20" Width="70" Click="BtnNewDroneClickHandler"/>
+                    <!-- Setting the visibility of the link button to collapsed as it will not be needed in the full program -->
+                    <Button Name="BtnNewLink" Margin="5" Content="Add Link" Height="20" Width="70" Click="BtnDroneLinkClickHandler" Visibility="Collapsed"/>
+                    <Button Name="BtnNewTower" Margin="5" Content="Add Tower" Height="20" Width="70" Click="AddTowerClickEventHandler"/>
+                    <Button Name="BtnDelete" Margin="5" Content="Delete" Height="20" Width="70" Click="BtnDeleteHandler"/>
+                    <CheckBox Name="ConnectionMapCheckBox" Margin="5" Content="Show Coverage Radius" Click="ConnectionMapCheckedHandler"/>
+                </StackPanel>
+            </Border>
+        </Canvas>
+    </Canvas>
+</Controls:MetroWindow>

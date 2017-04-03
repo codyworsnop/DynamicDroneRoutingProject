@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTemplate x:Key="DroneShape">
+        <StackPanel>
+            <StackPanel.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="LTE"
+                              IsChecked="{Binding Path=DataContext.LTEChecked, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" 
+                              Command="{Binding Path=DataContext.ChangeConnectionTypeLTECmd, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
+                    <MenuItem Header="WiFi" 
+                              IsChecked="{Binding Path=DataContext.WifiChecked, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"
+                              Command="{Binding ChangeConnectionTypeWIFICmd}"/>
+                    <MenuItem Header="Bluetooth"
+                              IsChecked="{Binding Path=DataContext.BluetoothChecked, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"
+                              Command="{Binding ChangeConnectionTypeBluetoothCmd}"/>
+                </ContextMenu>
+            </StackPanel.ContextMenu>
+            <Image Name="DroneImage" Source="Pack://Application:,,,/Images/Drone.png" Stretch="Uniform" Width="30" Height="30" HorizontalAlignment="Center"/>
+            <TextBlock Name="DroneText" Text="Drone" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="CommandCenterShape">
+        <StackPanel>
+            <Image Name="tplCommandCenterImage" Source="Pack://Application:,,,/Images/CommandAndControl.png" Stretch="Uniform" Width="30" Height="30" HorizontalAlignment="Center"/>
+            <TextBlock Name="tplCommandCenterText" Text="Command Center" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </ControlTemplate>
+
+</ResourceDictionary>
